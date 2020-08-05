@@ -4,8 +4,8 @@
   status = 200
 
 [[redirects]]
-  to = "/"
-  from = "/validate.html"
+  from = "/"
+  to = "/validate.html"
   status = 302
 
 [[headers]]
