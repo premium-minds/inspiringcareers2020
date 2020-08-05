@@ -31,12 +31,12 @@
   <script>
     let baseUrl = 'https://inspiringcareers2020.netlify.app'
     window.addEventListener('DOMContentLoaded', () => {
-      fetch(baseUrl+'/api/plates/index.json')
+      fetch(baseUrl+'/api/plates/index.json', {mode:'cors'})
         .then(x => x.json())
         .then(data => {
           allPromises = []
           for(let i=0; i< 10; i++) {
-            allPromises.push(fetch(baseUrl+data[i], {mode:'cors'}).then(x => x.json()))
+            allPromises.push(fetch(baseUrl+'/'+data[i], {mode:'cors'}).then(x => x.json()))
           }
           return Promise.all(allPromises)
         })
