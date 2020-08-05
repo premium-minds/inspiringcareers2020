@@ -3,6 +3,11 @@
   from = "/api/plates/cur.json"
   status = 200
 
+[[redirects]]
+  to = "/"
+  from = "/validate.html"
+  status = 302
+
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
   for = "/*"
