@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Inspiring Carrers 2020</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="menu">
+    <ul>
+      <li class="active">listagem</li>
+      <li><a href="validate.html">validação</a></li>
+    </ul>
+  </nav>
+  <article class="platelist">
+    <h1>Listagem de matrículas</h1>
+    <table>
+      <colgroup>
+          <col>
+          <col>
+          <col>
+      </colgroup>
+      <thead>
+        <tr><th>Imagem</th><th>Matrícula</th><th>Operador</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><img class="plate" src="http://lorempixel.com/g/160/120/transport"/> </td> <td>XP TO 00</td><td>Manuel Lopes da Silva</td></tr>
+      </tbody>
+    </table>
+  </article>
+  <script>
+    let baseUrl = 'https://inspiringcareers2020.netlify.app'
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch(baseUrl+'/api/plates/index.json')
+        .then(x => x.json())
+        .then(data => {
+          allPromises = []
+          for(let i=0; i< 10; i++) {
+            allPromises.push(fetch(baseUrl+data[i], {mode:'cors'}).then(x => x.json()))
+          }
+          return Promise.all(allPromises)
+        })
+        .then(data =>  {
+          let html = ''
+          for(let item of data) {
+            let id = item.id
+            let url = item.image_url
+            let plate = item.plate
+            let operator = "Manuel Lopes da Silva"
+            html += `<tr><td><img class="plate" src="${url}?${id}"/> </td> <td>${plate}</td><td>${operator}</td></tr>`
+          }
+          let el = document.querySelector('article.platelist table tbody');
+          el.innerHTML = html
+          return;
+        })
+    })
+  </script>
+</body>
+</html>
+

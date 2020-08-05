@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  flex-direction: horizontal;
+  font-family: system-ui;
+
+  /*
+  background: #f06d06;
+  color: white;*/
+}
+
+nav.menu {
+  min-width: 10em;
+  font-size: 1.1em;
+}
+
+
+nav.menu li {
+  list-style-type: none;
+}
+nav.menu li.active {
+  font-weight: bold;
+  background-color: #eee;
+}
+
+nav.menu li a {
+  
+}
+
+article.platelist table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+article.platelist table td {
+  text-align: center;
+}
+
+article.platelist table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+article.platelist table colgroup col:first-child {
+  width: 80px;
+}
+
+
+article.platelist table img.plate {
+  width: 80px;
+}
