@@ -1,0 +1,10 @@
+[[redirects]]
+  to = "/api/plates/d233471b-c9b1-42a6-9ab3-eec282c2a89e.json"
+  from = "/api/plates/cur.json"
+  status = 200
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
