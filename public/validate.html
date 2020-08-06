@@ -6,26 +6,27 @@
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-  <form name="plate_validator" method="POST" data-netlify="true">
-    <input type="hidden" value="XP TO 00">
+  <nav class="menu">
+    <ul>
+      <li><a href="list.html">listagem</a></li>
+      <li class="active">validação</li>
+    </ul>
+  </nav>
+ <article>
+  <form name="plate_validator" method="POST">
+    <input name="original_plate" type="hidden" value="XPTO00"></input>
   <p>
   <img src="http://lorempixel.com/g/640/480/transport"/>
   </p>
-  <!--
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  -->
-  <p>
-    <label>Matrícula: <input name="plate" value="XP TO 00"></input></label>
+  <p>  
+    <label for="plate">Matrícula: <input name="plate" value="XPTO00"></input> </label>
   </p>
   <p>
-    <button type="submit">Submeter</button>
+    <input type="button" name="validate" value="Submeter">
+    <!--<input type="button" name="platenotavailable" value="N/A"> -->
   </p>
 </form>
+</article>
 
   <script>
   </script>
